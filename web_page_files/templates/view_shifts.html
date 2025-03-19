@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Shifts</title>
+</head>
+<body>
+    <h1>View Shifts</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time Started</th>
+            <th>Time Ended</th>
+            <th> Hours Completed </th>
+            <th>Photo</th>
+        </tr>
+        {% for shift in shifts%}
+        <tr>
+            <td>{{shift.name}}</td>
+            <td>{{shift.date}}</td>
+            <td>{{shift.time_started}}</td>
+            <td>{{shift.time_ended}}</td>
+            <td>{{(datatime.strptime(shift.time_ended,"%H:%M") - datatime.strptime(shift.time_started, "%H:%M")).seconds / 3600}}</td>
+            <td><img src="{{url_for('static',filename='uploads/'+ shift.photo_filename) }}" width = "100"></td>
+        </tr>
+        {% endfor %}
+    </table>
+        <br>
+        <a href="/generate_report"> Generate Excel report for last 15 days</a>
+        </body>
+</html>
+  

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Shift Report</title>
+</head>
+    <body>
+        <h1>Upload Shift Report</h1>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for = "name">Name</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" name="date" required><br><br>
+            <label for="time_started">Time Started:</label><br>
+            <input type="time" id="time_started" name="time_started" required><br><br>
+            <label for="time_ended">Time Ended:</label><br>
+            <input type="time" id="time_ended" name="time_ended" required><br><br>
+            <label for="photo">Upload Photo:</label><br>
+            <input type="file" id="photo" name="photo" accept="image/*"><br><br>
+            <button type="submit">Upload</button>
+        </form>
+    </body>
+</html>
